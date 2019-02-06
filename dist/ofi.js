@@ -53,7 +53,7 @@ function setPlaceholder(img, width, height) {
 
 	// Only set placeholder if it's different
 	if (nativeGetAttribute.call(img, 'src') !== placeholder) {
-		nativeSetAttribute.call(img, 'src', placeholder);
+    img.src = placeholder;
 	}
 }
 
@@ -109,7 +109,7 @@ function fixOne(el) {
 			el.srcset = '';
 		}
 		try {
-			keepSrcUsable(el);
+			setTimeout(keepSrcUsable.bind(null, el), 0);
 		} catch (err) {
 			if (window.console) {
 				console.warn('https://bit.ly/ofi-old-browser');
