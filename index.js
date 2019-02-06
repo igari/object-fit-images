@@ -50,7 +50,6 @@ function setPlaceholder(img, width, height) {
 	// Only set placeholder if it's different
 	if (nativeGetAttribute.call(img, 'src') !== placeholder) {
     img.src = placeholder;
-		nativeSetAttribute.call(img, 'src', placeholder);
 	}
 }
 
